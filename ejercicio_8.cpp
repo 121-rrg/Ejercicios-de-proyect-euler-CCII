@@ -1,9 +1,10 @@
 #include <iostream>
-#include <string>
+#include <string> // importamos la libreria string
 using namespace std;
 int main(){
-    const string cadena = "\
-73167176531330624919225119674426574742355349194934\
+
+    //declaramos nuestra cadena como constante y como string
+    const string cadena = "73167176531330624919225119674426574742355349194934\
 96983520312774506326239578318016984801869478851843\
 85861560789112949495459501737958331952853208805511\
 12540698747158523863050715693290963295227443043557\
@@ -24,13 +25,14 @@ int main(){
 05886116467109405077541002256983155200055935729725\
 71636269561882670428252483600823257530420752963450";
 
-    long long mayor_producto=1;
-    for (size_t i=0;i<cadena.length()-13;++i){
-        long long actual = 1;
-        for (size_t j=i;j<i+13;++j)
-            actual *= cadena[j]-'0';
-        if (actual > mayor_producto)
-            mayor_producto = actual;
+    long long mayor_producto=1;              // declaramos nuestras variables
+
+    for (size_t i=0;i<cadena.length();i++){ // la palabra length(),para obtener la longitud de nuestra cadena
+        long long actual = 1;       
+        for (size_t j=i;j<i+13;j++)         // hacemos un bucle, donde con i+13, elegiremos 13 numeros adyacentes
+            actual=actual* (cadena[j]-'0');   //convertimos cada caracter de la cadena en un numero  con el comando -'0' y efectuamos el producto
+        if (actual>mayor_producto)              // si el producto de los 13 numeros es mayor que "mayor_producto"
+            mayor_producto = actual;            //asignamos el valor actual a "mayor_producto"
     }
-    cout<<mayor_producto<<endl;
+    cout<<mayor_producto<<endl;             //imprimimos en pantalla el mayor producto
 }
