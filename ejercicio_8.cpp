@@ -30,7 +30,7 @@ int main(){
     for (size_t i=0;i<cadena.length();i++){ // la palabra length(),para obtener la longitud de nuestra cadena
         long long actual = 1;       
         for (size_t j=i;j<i+13;j++)         // hacemos un bucle, donde con i+13, elegiremos 13 numeros adyacentes
-            actual=actual* (cadena[j]-'0');   //convertimos cada caracter de la cadena en un numero  con el comando -'0' y efectuamos el producto
+            actual=actual* (cadena[j]-'0');   //convertimos cada caracter de la cadena en un numero  con el comando -'0'=48 en ascii y efectuamos el producto
         if (actual>mayor_producto)              // si el producto de los 13 numeros es mayor que "mayor_producto"
             mayor_producto = actual;            //asignamos el valor actual a "mayor_producto"
     }
